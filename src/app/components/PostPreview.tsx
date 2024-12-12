@@ -1,5 +1,6 @@
 import { BlogPost } from "@/app/types";
 import Image from "next/image";
+import Link from "next/link";
 
 interface PostPreviewProps {
   post: BlogPost;
@@ -19,9 +20,9 @@ const PostPreview = ({ post }: PostPreviewProps) => {
       <div className="p-4 flex flex-col gap-2">
         <h2 className="text-lg font-extrabold">{post.title}</h2>
         <p>{post.excerpt}</p>
-        <a href={`/post/${post.id}`} className="ml-auto">
+        <Link href={`/post/${post.id}`} className="ml-auto">
           Read more
-        </a>
+        </Link>
       </div>
     </div>
   );

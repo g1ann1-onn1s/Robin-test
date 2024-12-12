@@ -1,5 +1,6 @@
 import { BlogPost } from "@/app/types";
 import Image from "next/image";
+import Link from "next/link";
 
 const PostDetail = async () => {
   const res = await fetch(`http://localhost:3000/api/posts?n=1`);
@@ -19,11 +20,14 @@ const PostDetail = async () => {
           />
         </div>
         <div className="flex flex-col gap-6">
-          <p>{post.text}</p>
+          <p className="text-justify">{post.text}</p>
           <p>
             Published {new Date(post.publishDate).toLocaleDateString("it-IT")}
           </p>
         </div>
+        <Link href="/" className="mt-auto ml-auto">
+          Back
+        </Link>
       </div>
     </div>
   );
