@@ -6,7 +6,7 @@ interface Props {
 }
 
 const Homepage = async () => {
-  const res = await fetch("http://localhost:3000/api/posts?n=5");
+  const res = await fetch("http://localhost:3000/api/posts");
   const posts: BlogPost[] = await res.json();
 
   return (
